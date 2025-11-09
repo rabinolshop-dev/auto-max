@@ -1,4 +1,4 @@
-import { Facebook, Instagram, Twitter, Youtube } from "lucide-react";
+import { Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
@@ -7,34 +7,20 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">Ziamt Auto</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4">AutoMax</h3>
             <p className="text-muted-foreground mb-4">
               Your trusted partner for premium automotive parts and accessories. Quality you can depend on, service you can trust.
             </p>
             <div className="flex gap-4">
               <a
-                href="#"
-                className="p-3 glass-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all glow-effect"
-                aria-label="Facebook"
-              >
-                <Facebook size={20} className="text-foreground" />
-              </a>
-              <a
-                href="#"
+                href="https://www.instagram.com/rabinol_uz/" target="_blank"
                 className="p-3 glass-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all glow-effect"
                 aria-label="Instagram"
               >
                 <Instagram size={20} className="text-foreground" />
               </a>
               <a
-                href="#"
-                className="p-3 glass-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all glow-effect"
-                aria-label="Twitter"
-              >
-                <Twitter size={20} className="text-foreground" />
-              </a>
-              <a
-                href="#"
+                href="https://youtube.com/" target="_blank"
                 className="p-3 glass-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all glow-effect"
                 aria-label="YouTube"
               >
@@ -81,7 +67,7 @@ const Footer = () => {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-border text-center">
           <p className="text-muted-foreground">
-            © {new Date().getFullYear()} Ziamt Auto. All rights reserved.
+            © {new Date().getFullYear()} AutoMax. All rights reserved.
           </p>
         </div>
       </div>

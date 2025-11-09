@@ -36,7 +36,7 @@ const Navigation = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
           <a href="#home" className="flex items-center gap-2">
-            <div className="text-2xl font-bold gradient-text">Ziamt Auto</div>
+            <div className="text-2xl font-bold gradient-text">AutoMax</div>
           </a>
 
           {/* Desktop Navigation */}

@@ -20,7 +20,7 @@ const AboutSection = () => {
             <div className="glass-card p-2 rounded-2xl">
               <img
                 src={aboutShopImage}
-                alt="Ziamt Auto Shop"
+                alt="AutoMax Shop"
                 className="w-full h-auto rounded-xl"
               />
             </div>
@@ -33,10 +33,10 @@ const AboutSection = () => {
           {/* Content */}
           <div className="animate-fade-in" style={{ animationDelay: "0.2s" }}>
             <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              About <span className="gradient-text">Ziamt Auto</span>
+              About <span className="gradient-text">AutoMax</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-6">
-              For over 15 years, Ziamt Auto has been the trusted destination for premium automotive parts and accessories. We specialize in providing high-quality products that keep your vehicle performing at its best.
+              For over 15 years, AutoMax has been the trusted destination for premium automotive parts and accessories. We specialize in providing high-quality products that keep your vehicle performing at its best.
             </p>
             <p className="text-lg text-muted-foreground mb-8">
               Our commitment to excellence and customer satisfaction has made us a leader in the automotive parts industry. We work directly with renowned manufacturers like RABINOL to ensure you receive only genuine, certified products.

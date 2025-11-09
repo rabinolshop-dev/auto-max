@@ -16,7 +16,7 @@ const ProductCard = ({ title, image, description, onLearnMore }: ProductCardProp
         <img
           src={image}
           alt={title}
-          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+          className="w-full scale-125 h-full object-cover group-hover:scale-150 transition-transform duration-500"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
       </div>
@@ -29,7 +29,7 @@ const ProductCard = ({ title, image, description, onLearnMore }: ProductCardProp
             className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect group/btn"
           >
             <ShoppingCart size={18} className="mr-2 group-hover/btn:scale-110 transition-transform" />
-            Learn More
+            More Info
           </Button>
         </div>
       </div>
