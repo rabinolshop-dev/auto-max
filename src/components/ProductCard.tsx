@@ -6,9 +6,10 @@ interface ProductCardProps {
   title: string;
   image: string;
   description: string;
+  onLearnMore: () => void;
 }
 
-const ProductCard = ({ title, image, description }: ProductCardProps) => {
+const ProductCard = ({ title, image, description, onLearnMore }: ProductCardProps) => {
   return (
     <Card className="glass-card overflow-hidden group hover:scale-105 transition-all duration-300 glow-effect">
       <div className="relative overflow-hidden aspect-square bg-muted/20">
@@ -23,7 +24,10 @@ const ProductCard = ({ title, image, description }: ProductCardProps) => {
         <h3 className="text-lg font-semibold mb-2 text-foreground line-clamp-2">{title}</h3>
         <p className="text-sm text-muted-foreground mb-4 line-clamp-3">{description}</p>
         <div className="flex items-center justify-between">
-          <Button className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect group/btn">
+          <Button 
+            onClick={onLearnMore}
+            className="bg-primary hover:bg-primary/90 text-primary-foreground glow-effect group/btn"
+          >
             <ShoppingCart size={18} className="mr-2 group-hover/btn:scale-110 transition-transform" />
             Learn More
           </Button>
