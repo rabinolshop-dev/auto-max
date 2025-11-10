@@ -1,11 +1,12 @@
 import { useParams, Link } from "react-router-dom";
-import { ArrowLeft, CheckCircle2, Package, Shield, Zap } from "lucide-react";
+import { ArrowLeft, ChevronLeft, ChevronRight, Package, Shield, Zap } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 
 import p1 from "@/assets/p1_front.png";
 import p1back from "@/assets/p1_back.png";
@@ -338,24 +339,34 @@ const ProductDetail = () => {
           </Link>
 
           <div className="grid lg:grid-cols-2 gap-12 mb-16">
-            {/* Product Images */}
-            <div ref={imageRef} className="space-y-6">
-              <div className="automotive-card p-8 rounded-2xl">
-                <img
-                  src={product.image}
-                  alt={product.title}
-                  className="w-full h-auto rounded-lg"
-                />
-              </div>
-              {product.imageBack && (
-                <div className="automotive-card p-8 rounded-2xl">
-                  <img
-                    src={product.imageBack}
-                    alt={`${product.title} - Back`}
-                    className="w-full h-auto rounded-lg"
-                  />
-                </div>
-              )}
+            {/* Product Images Carousel */}
+            <div ref={imageRef} className="automotive-card p-4 rounded-2xl">
+              <Carousel className="w-full">
+                <CarouselContent>
+                  <CarouselItem>
+                    <div className="p-4">
+                      <img
+                        src={product.image}
+                        alt={product.title}
+                        className="w-full h-auto rounded-lg object-contain"
+                      />
+                    </div>
+                  </CarouselItem>
+                  {product.imageBack && (
+                    <CarouselItem>
+                      <div className="p-4">
+                        <img
+                          src={product.imageBack}
+                          alt={`${product.title} - Back`}
+                          className="w-full h-auto rounded-lg object-contain"
+                        />
+                      </div>
+                    </CarouselItem>
+                  )}
+                </CarouselContent>
+                <CarouselPrevious className="left-2 bg-primary/90 hover:bg-primary text-white border-0" />
+                <CarouselNext className="right-2 bg-primary/90 hover:bg-primary text-white border-0" />
+              </Carousel>
             </div>
 
             {/* Product Info */}
