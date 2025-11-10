@@ -2,26 +2,26 @@ import { Instagram, Youtube } from "lucide-react";
 
 const Footer = () => {
   return (
-    <footer className="relative border-t border-border bg-muted/20">
+    <footer className="relative border-t border-border bg-muted/10">
       <div className="container mx-auto px-4 py-12">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div className="col-span-1 md:col-span-2">
-            <h3 className="text-2xl font-bold gradient-text mb-4">AutoMax</h3>
+            <h3 className="text-2xl font-bold gradient-text mb-4 font-heading tracking-wide">RABINOL</h3>
             <p className="text-muted-foreground mb-4">
               Your trusted partner for premium automotive parts and accessories. Quality you can depend on, service you can trust.
             </p>
             <div className="flex gap-4">
               <a
                 href="https://www.instagram.com/rabinol_uz/" target="_blank"
-                className="p-3 glass-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all glow-effect"
+                className="p-3 automotive-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all"
                 aria-label="Instagram"
               >
                 <Instagram size={20} className="text-foreground" />
               </a>
               <a
                 href="https://youtube.com/" target="_blank"
-                className="p-3 glass-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all glow-effect"
+                className="p-3 automotive-card rounded-lg hover:scale-110 hover:bg-primary/10 transition-all"
                 aria-label="YouTube"
               >
                 <Youtube size={20} className="text-foreground" />

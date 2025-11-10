@@ -1,10 +1,12 @@
-import { useState, useEffect, useRef } from "react";
-import ProductCard from "./ProductCard";
-import SearchBar from "./SearchBar";
+import { useParams, Link } from "react-router-dom";
+import { ArrowLeft, CheckCircle2, Package, Shield, Zap } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
+import { useEffect, useRef } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-gsap.registerPlugin(ScrollTrigger);
 import p1 from "@/assets/p1_front.png";
 import p1back from "@/assets/p1_back.png";
 import p2 from "@/assets/p2_front.png";
@@ -21,9 +23,8 @@ import p7 from "@/assets/p7_front.png";
 import p7back from "@/assets/p7_back.png";
 import p8 from "@/assets/p8_front.png";
 import p8back from "@/assets/p8_back.png";
-import p9 from "@/assets/p8_front.png";
-import p9back from "@/assets/p8_back.png";
 
+gsap.registerPlugin(ScrollTrigger);
 
 const products = [
   {
@@ -246,8 +247,8 @@ Sotib olish: rabinol.uz`
   {
     id: 9,
     title: "RABINOL Special Tec DX2 Motor Engine Oil 5W-40 – High Performance 4L",
-    image: p9,
-    imageBack: p9back,
+    image: p8,
+    imageBack: p8back,
     description:
       "RABINOL DX2 5W-40 – yuqori sifatli, to'liq sintetik motor moyi, tabiiy aspiratsiyali va turbo dvigatellar uchun ideal.",
     fullDescription: `RABINOL Special Tec DX2 Motor Engine Oil 5W-40 – 4L, High Performance
@@ -266,83 +267,164 @@ Sotib olish: rabinol.uz`
   }
 ];
 
-
-const ProductsSection = () => {
-  const [searchQuery, setSearchQuery] = useState("");
-  const sectionRef = useRef<HTMLDivElement>(null);
-  const titleRef = useRef<HTMLDivElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+const ProductDetail = () => {
+  const { id } = useParams();
+  const product = products.find((p) => p.id === Number(id));
+  const containerRef = useRef<HTMLDivElement>(null);
+  const imageRef = useRef<HTMLDivElement>(null);
+  const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (!titleRef.current || !gridRef.current) return;
+    if (!containerRef.current || !imageRef.current || !contentRef.current) return;
 
     gsap.fromTo(
-      titleRef.current,
-      { opacity: 0, y: 50 },
+      imageRef.current,
+      { opacity: 0, x: -100 },
+      { opacity: 1, x: 0, duration: 1, ease: "power3.out" }
+    );
+
+    gsap.fromTo(
+      contentRef.current,
+      { opacity: 0, x: 100 },
+      { opacity: 1, x: 0, duration: 1, delay: 0.3, ease: "power3.out" }
+    );
+
+    const features = containerRef.current.querySelectorAll(".feature-item");
+    gsap.fromTo(
+      features,
+      { opacity: 0, y: 30 },
       {
         opacity: 1,
         y: 0,
-        duration: 1,
-        ease: "power3.out",
+        duration: 0.6,
+        stagger: 0.1,
+        delay: 0.6,
+        ease: "power2.out",
         scrollTrigger: {
-          trigger: titleRef.current,
+          trigger: features[0],
           start: "top 80%",
         },
       }
     );
+  }, [product]);
 
-    const cards = gridRef.current.children;
-    gsap.fromTo(
-      cards,
-      { opacity: 0, y: 60 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        stagger: 0.1,
-        ease: "power2.out",
-        scrollTrigger: {
-          trigger: gridRef.current,
-          start: "top 70%",
-        },
-      }
-    );
-  }, [searchQuery]);
-
-  const filteredProducts = products.filter((product) =>
-    product.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    product.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
-  return (
-    <section id="products" ref={sectionRef} className="py-20 relative section-divider">
-      <div className="absolute inset-0 bg-gradient-to-b from-background via-muted/10 to-background pointer-events-none"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        <div ref={titleRef} className="text-center mb-12">
-          <h2 className="text-5xl md:text-6xl font-bold mb-4 font-heading">
-            Premium <span className="gradient-text">Products</span>
-          </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our professional-grade RABINOL motor oils and automotive fluids, engineered in Germany
-          </p>
-        </div>
-
-        <SearchBar value={searchQuery} onChange={setSearchQuery} />
-
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredProducts.map((product) => (
-            <ProductCard
-              key={product.id}
-              id={product.id}
-              title={product.title}
-              image={product.image}
-              description={product.description}
-            />
-          ))}
+  if (!product) {
+    return (
+      <div className="min-h-screen flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold mb-4">Product Not Found</h1>
+          <Link to="/">
+            <Button className="bg-primary hover:bg-primary/90">
+              <ArrowLeft className="mr-2" size={18} />
+              Back to Products
+            </Button>
+          </Link>
         </div>
       </div>
-    </section>
+    );
+  }
+
+  return (
+    <div className="min-h-screen">
+      <Navigation />
+      
+      <div className="pt-32 pb-20 min-h-screen" ref={containerRef}>
+        <div className="container mx-auto px-4">
+          <Link to="/#products">
+            <Button variant="ghost" className="mb-8 hover:text-primary">
+              <ArrowLeft className="mr-2" size={18} />
+              Back to Products
+            </Button>
+          </Link>
+
+          <div className="grid lg:grid-cols-2 gap-12 mb-16">
+            {/* Product Images */}
+            <div ref={imageRef} className="space-y-6">
+              <div className="automotive-card p-8 rounded-2xl">
+                <img
+                  src={product.image}
+                  alt={product.title}
+                  className="w-full h-auto rounded-lg"
+                />
+              </div>
+              {product.imageBack && (
+                <div className="automotive-card p-8 rounded-2xl">
+                  <img
+                    src={product.imageBack}
+                    alt={`${product.title} - Back`}
+                    className="w-full h-auto rounded-lg"
+                  />
+                </div>
+              )}
+            </div>
+
+            {/* Product Info */}
+            <div ref={contentRef} className="space-y-6">
+              <div>
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 font-heading">
+                  {product.title}
+                </h1>
+                <p className="text-lg text-muted-foreground">
+                  {product.description}
+                </p>
+              </div>
+
+              <div className="automotive-card p-6 rounded-xl space-y-4">
+                <div className="flex items-center gap-3 feature-item">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Shield className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Premium Quality</h3>
+                    <p className="text-sm text-muted-foreground">German Engineering</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 feature-item">
+                  <div className="p-3 bg-accent/10 rounded-lg">
+                    <Zap className="text-accent" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">High Performance</h3>
+                    <p className="text-sm text-muted-foreground">Advanced Formula</p>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 feature-item">
+                  <div className="p-3 bg-primary/10 rounded-lg">
+                    <Package className="text-primary" size={24} />
+                  </div>
+                  <div>
+                    <h3 className="font-semibold">Certified Product</h3>
+                    <p className="text-sm text-muted-foreground">International Standards</p>
+                  </div>
+                </div>
+              </div>
+
+              <Button 
+                className="w-full bg-primary hover:bg-primary/90 text-white text-lg py-6 glow-orange"
+                asChild
+              >
+                <a href="#contact">Request Quote</a>
+              </Button>
+            </div>
+          </div>
+
+          {/* Full Description */}
+          <div className="automotive-card p-8 rounded-2xl">
+            <h2 className="text-3xl font-bold mb-6 gradient-text">Product Details</h2>
+            <div className="prose prose-invert max-w-none">
+              <pre className="whitespace-pre-wrap font-sans text-foreground/90 leading-relaxed">
+                {product.fullDescription}
+              </pre>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <Footer />
+    </div>
   );
 };
 
-export default ProductsSection;
+export default ProductDetail;

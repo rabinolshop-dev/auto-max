@@ -8,50 +8,51 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    --background: 220 25% 8%;
+    --background: 220 18% 12%;
     --foreground: 210 20% 98%;
 
-    --card: 220 20% 12%;
+    --card: 220 16% 16%;
     --card-foreground: 210 20% 98%;
 
-    --popover: 220 25% 10%;
+    --popover: 220 18% 14%;
     --popover-foreground: 210 20% 98%;
 
-    --primary: 190 100% 50%;
-    --primary-foreground: 220 25% 8%;
+    --primary: 24 95% 53%;
+    --primary-foreground: 0 0% 100%;
 
-    --secondary: 220 20% 18%;
+    --secondary: 220 16% 20%;
     --secondary-foreground: 210 20% 98%;
 
-    --muted: 220 15% 15%;
+    --muted: 220 15% 18%;
     --muted-foreground: 210 10% 65%;
 
-    --accent: 210 10% 75%;
-    --accent-foreground: 220 25% 8%;
+    --accent: 199 89% 48%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 20% 98%;
 
-    --border: 220 15% 20%;
-    --input: 220 15% 20%;
-    --ring: 190 100% 50%;
+    --border: 220 15% 22%;
+    --input: 220 15% 22%;
+    --ring: 24 95% 53%;
 
     --radius: 0.75rem;
 
-    /* Custom design tokens */
-    --glow-primary: 190 100% 50%;
-    --metallic: 210 10% 75%;
-    --glass-bg: 220 20% 12%;
+    /* Automotive design tokens */
+    --automotive-orange: 24 95% 53%;
+    --automotive-blue: 199 89% 48%;
+    --metallic-silver: 210 10% 75%;
+    --dark-surface: 220 16% 16%;
     
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, hsl(190 100% 50% / 0.8), hsl(210 100% 60% / 0.6));
-    --gradient-hero: linear-gradient(180deg, hsl(220 25% 8%), hsl(220 30% 12%));
-    --gradient-glow: radial-gradient(circle at center, hsl(190 100% 50% / 0.3), transparent 70%);
+    --gradient-primary: linear-gradient(135deg, hsl(24 95% 53%) 0%, hsl(14 90% 50%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(199 89% 48%) 0%, hsl(189 85% 45%) 100%);
+    --gradient-dark: linear-gradient(180deg, hsl(220 18% 12%) 0%, hsl(220 20% 8%) 100%);
     
     /* Shadows */
-    --shadow-glow: 0 0 40px hsl(var(--glow-primary) / 0.4);
-    --shadow-glow-lg: 0 0 60px hsl(var(--glow-primary) / 0.6);
-    --shadow-card: 0 8px 32px hsl(220 25% 5% / 0.5);
+    --shadow-glow-orange: 0 0 30px hsl(24 95% 53% / 0.3);
+    --shadow-glow-blue: 0 0 30px hsl(199 89% 48% / 0.3);
+    --shadow-card: 0 10px 40px hsl(220 25% 5% / 0.6);
     
     /* Animations */
     --transition-smooth: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -65,7 +66,7 @@ All colors MUST be HSL.
 
   body {
     @apply bg-background text-foreground;
-    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    font-family: 'Rajdhani', 'Inter', system-ui, -apple-system, sans-serif;
   }
   
   html {
@@ -74,20 +75,26 @@ All colors MUST be HSL.
 }
 
 @layer utilities {
-  .glass-card {
-    background: hsl(var(--glass-bg) / 0.4);
-    backdrop-filter: blur(12px);
-    border: 1px solid hsl(var(--border) / 0.3);
+  .automotive-card {
+    background: hsl(var(--dark-surface) / 0.8);
+    backdrop-filter: blur(16px);
+    border: 1px solid hsl(var(--border) / 0.5);
     box-shadow: var(--shadow-card);
-  }
-  
-  .glow-effect {
-    box-shadow: var(--shadow-glow);
     transition: var(--transition-smooth);
   }
   
-  .glow-effect:hover {
-    box-shadow: var(--shadow-glow-lg);
+  .automotive-card:hover {
+    border-color: hsl(var(--automotive-orange) / 0.5);
+    box-shadow: var(--shadow-glow-orange), var(--shadow-card);
+    transform: translateY(-4px);
+  }
+  
+  .glow-orange {
+    box-shadow: var(--shadow-glow-orange);
+  }
+  
+  .glow-blue {
+    box-shadow: var(--shadow-glow-blue);
   }
   
   .gradient-text {
@@ -95,5 +102,27 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
+  }
+  
+  .gradient-text-blue {
+    background: var(--gradient-accent);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  
+  .section-divider {
+    position: relative;
+  }
+  
+  .section-divider::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: var(--gradient-primary);
+    opacity: 0.3;
   }
 }

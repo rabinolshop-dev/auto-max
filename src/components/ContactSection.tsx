@@ -39,12 +39,12 @@ const ContactSection = () => {
   };
 
   return (
-    <section id="contact" className="py-20 relative">
-      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl"></div>
+    <section id="contact" className="py-20 relative section-divider">
+      <div className="absolute top-0 left-1/4 w-96 h-96 bg-accent/20 rounded-full blur-3xl"></div>
 
       <div className="container mx-auto px-4 relative z-10">
         <div className="text-center mb-12 animate-fade-in">
-          <h2 className="text-4xl md:text-5xl font-bold mb-4">
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 font-heading">
             Get In <span className="gradient-text">Touch</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -55,7 +55,7 @@ const ContactSection = () => {
 
         <div className="grid lg:grid-cols-2 gap-12">
           {/* Contact Form */}
-          <div className="glass-card p-8 rounded-2xl animate-fade-in">
+          <div className="automotive-card p-8 rounded-2xl animate-fade-in">
             <form className="space-y-6" onSubmit={handleSubmit(onSubmit)}>
               <div>
                 <Input
@@ -89,7 +89,7 @@ const ContactSection = () => {
                   className="bg-background/50 border-border resize-none"
                 />
               </div>
-              <Button className="w-full glow-effect bg-primary hover:bg-primary/90 text-primary-foreground group">
+              <Button className="w-full glow-orange bg-primary hover:bg-primary/90 text-white group font-semibold">
                 Send Message
                 <Send
                   size={18}
@@ -105,7 +105,7 @@ const ContactSection = () => {
             style={{ animationDelay: "0.2s" }}
           >
             <div className="space-y-6">
-              <div className="glass-card p-6 rounded-xl flex items-start gap-4 hover:scale-105 transition-transform">
+              <div className="automotive-card p-6 rounded-xl flex items-start gap-4 hover:scale-105 transition-transform">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <Phone className="text-primary" size={24} />
                 </div>
@@ -117,7 +117,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="glass-card p-6 rounded-xl flex items-start gap-4 hover:scale-105 transition-transform">
+              <div className="automotive-card p-6 rounded-xl flex items-start gap-4 hover:scale-105 transition-transform">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <Mail className="text-primary" size={24} />
                 </div>
@@ -132,7 +132,7 @@ const ContactSection = () => {
                 </div>
               </div>
 
-              <div className="glass-card p-6 rounded-xl flex items-start gap-4 hover:scale-105 transition-transform">
+              <div className="automotive-card p-6 rounded-xl flex items-start gap-4 hover:scale-105 transition-transform">
                 <div className="p-3 bg-primary/10 rounded-lg">
                   <MapPin className="text-primary" size={24} />
                 </div>
@@ -144,7 +144,7 @@ const ContactSection = () => {
             </div>
 
             {/* Map Placeholder */}
-            <div className="glass-card rounded-xl overflow-hidden h-64">
+            <div className="automotive-card rounded-xl overflow-hidden h-64">
               <iframe
                 src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d276.5816023778979!2d68.76552243290692!3d40.502892554010934!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2s!4v1762709341559!5m2!1sen!2s"
                 width="100%"

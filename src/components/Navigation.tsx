@@ -29,14 +29,14 @@ const Navigation = () => {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "glass-card py-3" : "bg-transparent py-6"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        isScrolled ? "automotive-card py-3 shadow-lg" : "bg-transparent py-6"
       }`}
     >
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between">
-          <a href="#home" className="flex items-center gap-2">
-            <div className="text-2xl font-bold gradient-text">AutoMax</div>
+          <a href="/" className="flex items-center gap-2">
+            <div className="text-2xl font-bold gradient-text font-heading tracking-wide">RABINOL</div>
           </a>
 
           {/* Desktop Navigation */}
@@ -45,20 +45,23 @@ const Navigation = () => {
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="text-foreground/80 hover:text-primary transition-colors relative group"
+                className="text-foreground/90 hover:text-primary transition-colors relative group font-medium"
               >
                 {link.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary transition-all group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-primary to-accent transition-all group-hover:w-full"></span>
               </button>
             ))}
-            <Button className="glow-effect bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button 
+              onClick={() => scrollToSection("#contact")}
+              className="glow-orange bg-primary hover:bg-primary/90 text-white font-semibold"
+            >
               Get Quote
             </Button>
           </div>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-foreground"
+            className="md:hidden text-foreground p-2"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -67,17 +70,20 @@ const Navigation = () => {
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 glass-card rounded-lg p-4 animate-fade-in">
+          <div className="md:hidden mt-4 automotive-card rounded-lg p-4 animate-fade-in">
             {navLinks.map((link) => (
               <button
                 key={link.name}
                 onClick={() => scrollToSection(link.href)}
-                className="block w-full text-left py-3 text-foreground/80 hover:text-primary transition-colors"
+                className="block w-full text-left py-3 text-foreground/90 hover:text-primary transition-colors font-medium"
               >
                 {link.name}
               </button>
             ))}
-            <Button className="w-full mt-3 glow-effect bg-primary hover:bg-primary/90 text-primary-foreground">
+            <Button 
+              onClick={() => scrollToSection("#contact")}
+              className="w-full mt-3 glow-orange bg-primary hover:bg-primary/90 text-white font-semibold"
+            >
               Get Quote
             </Button>
           </div>
