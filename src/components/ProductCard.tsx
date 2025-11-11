@@ -65,8 +65,8 @@ const ProductCard = ({ id, title, image, description }: ProductCardProps) => {
         <div className="relative overflow-hidden aspect-square bg-muted/10">
           <img
             src={image}
-            alt={title}
-            className="w-full h-full object-contain p-6 group-hover:scale-110 transition-transform duration-700"
+            alt={`${title} - Rabinol motor moyi Germaniyada ishlab chiqarilgan yuqori sifatli moy`}
+            className="w-full h-full object-contain p-4 group-hover:scale-125 transition-transform duration-700 scale-110"
           />
           <div className="absolute top-4 right-4 bg-primary/90 text-white px-3 py-1 rounded-full text-xs font-semibold">
             Premium

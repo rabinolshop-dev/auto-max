@@ -3,7 +3,9 @@ import { ArrowLeft, ChevronLeft, ChevronRight, Package, Shield, Zap } from "luci
 import { Button } from "@/components/ui/button";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import ProductSchema from "@/components/ProductSchema";
 import { useEffect, useRef, useState } from "react";
+import { Helmet } from "react-helmet";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
@@ -276,6 +278,9 @@ const ProductDetail = () => {
   const contentRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+    
     if (!containerRef.current || !imageRef.current || !contentRef.current) return;
 
     gsap.fromTo(
@@ -327,6 +332,24 @@ const ProductDetail = () => {
 
   return (
     <div className="min-h-screen">
+      <Helmet>
+        <title>{product.title} | RABINOL Motor Moylari - Germaniyada ishlab chiqarilgan</title>
+        <meta name="description" content={`${product.description} - RABINOL premium motor moyi O'zbekistonda. German sifati, yuqori ishlash, ishonchli himoya.`} />
+        <meta name="keywords" content={`rabinol, rabinol oil, rabinol moylari, ${product.title}, german motor oil, motor oil uzbekistan`} />
+        <link rel="canonical" href={`https://rabinol.uz/product/${product.id}`} />
+        
+        <meta property="og:title" content={`${product.title} | RABINOL Motor Moylari`} />
+        <meta property="og:description" content={product.description} />
+        <meta property="og:image" content={`https://rabinol.uz${product.image}`} />
+        <meta property="og:url" content={`https://rabinol.uz/product/${product.id}`} />
+        <meta property="og:type" content="product" />
+        
+        <meta name="twitter:title" content={`${product.title} | RABINOL Motor Moylari`} />
+        <meta name="twitter:description" content={product.description} />
+        <meta name="twitter:image" content={`https://rabinol.uz${product.image}`} />
+        <meta name="twitter:card" content="summary_large_image" />
+      </Helmet>
+      <ProductSchema product={product} />
       <Navigation />
       
       <div className="pt-32 pb-20 min-h-screen" ref={containerRef}>
@@ -347,7 +370,7 @@ const ProductDetail = () => {
                     <div className="p-4">
                       <img
                         src={product.image}
-                        alt={product.title}
+                        alt={`${product.title} - Rabinol motor moyi Germaniyada ishlab chiqarilgan yuqori sifatli moy`}
                         className="w-full h-auto rounded-lg object-contain"
                       />
                     </div>
@@ -357,7 +380,7 @@ const ProductDetail = () => {
                       <div className="p-4">
                         <img
                           src={product.imageBack}
-                          alt={`${product.title} - Back`}
+                          alt={`${product.title} orqa tomoni - Rabinol motor moyi German sifati`}
                           className="w-full h-auto rounded-lg object-contain"
                         />
                       </div>
@@ -411,13 +434,6 @@ const ProductDetail = () => {
                   </div>
                 </div>
               </div>
-
-              <Button 
-                className="w-full bg-primary hover:bg-primary/90 text-white text-lg py-6 glow-orange"
-                asChild
-              >
-                <a href="#contact">Request Quote</a>
-              </Button>
             </div>
           </div>
 

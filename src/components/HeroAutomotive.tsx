@@ -73,9 +73,9 @@ const HeroAutomotive = () => {
             ref={titleRef}
             className="text-5xl md:text-7xl font-bold font-heading leading-tight"
           >
-            Professional <span className="gradient-text">Automotive</span>
+            <span className="gradient-text">RABINOL</span> Motor Moylari
             <br />
-            Service & Parts
+            Germaniyada Ishlab Chiqarilgan
           </h1>
 
           {/* Subtitle */}
@@ -83,8 +83,8 @@ const HeroAutomotive = () => {
             ref={subtitleRef}
             className="text-xl md:text-2xl text-muted-foreground max-w-2xl mx-auto leading-relaxed"
           >
-            Premium German-engineered RABINOL motor oils and automotive fluids. 
-            Trusted by professionals for over 15 years.
+            Yuqori sifatli German motor oil va transmissiya moylari O'zbekistonda. 
+            RABINOL oil - professional xizmat va ishonchli himoya uchun eng yaxshi tanlov.
           </p>
 
           {/* CTA Buttons */}
@@ -94,7 +94,7 @@ const HeroAutomotive = () => {
               size="lg"
               className="bg-primary hover:bg-primary/90 text-white px-8 py-6 text-lg glow-orange group"
             >
-              View Products
+              Mahsulotlarni Ko'rish
               <ArrowRight className="ml-2 group-hover:translate-x-1 transition-transform" size={20} />
             </Button>
             <Button
@@ -103,7 +103,7 @@ const HeroAutomotive = () => {
               variant="outline"
               className="border-primary/50 hover:bg-primary/10 px-8 py-6 text-lg"
             >
-              Request Quote
+              Bog'lanish
             </Button>
           </div>
 
@@ -116,9 +116,9 @@ const HeroAutomotive = () => {
               <div className="inline-flex p-4 bg-primary/10 rounded-full">
                 <Shield className="text-primary" size={32} />
               </div>
-              <h3 className="text-xl font-bold font-heading">Premium Quality</h3>
+              <h3 className="text-xl font-bold font-heading">Premium Sifat</h3>
               <p className="text-muted-foreground">
-                German-engineered products meeting international standards
+                Germaniyada ishlab chiqarilgan mahsulotlar xalqaro standartlarga mos
               </p>
             </div>
 
@@ -126,9 +126,9 @@ const HeroAutomotive = () => {
               <div className="inline-flex p-4 bg-accent/10 rounded-full">
                 <Zap className="text-accent" size={32} />
               </div>
-              <h3 className="text-xl font-bold font-heading">High Performance</h3>
+              <h3 className="text-xl font-bold font-heading">Yuqori Ishlash</h3>
               <p className="text-muted-foreground">
-                Advanced formulas for maximum engine protection
+                Dvigatelni maksimal himoya qilish uchun zamonaviy formula
               </p>
             </div>
 
@@ -136,9 +136,9 @@ const HeroAutomotive = () => {
               <div className="inline-flex p-4 bg-primary/10 rounded-full">
                 <Wrench className="text-primary" size={32} />
               </div>
-              <h3 className="text-xl font-bold font-heading">Expert Support</h3>
+              <h3 className="text-xl font-bold font-heading">Professional Xizmat</h3>
               <p className="text-muted-foreground">
-                Professional technical assistance for all your needs
+                Barcha ehtiyojlaringiz uchun texnik yordam va maslahat
               </p>
             </div>
           </div>

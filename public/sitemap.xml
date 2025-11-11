@@ -1,16 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset 
-  xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://rabinol.uz/</loc>
+    <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <lastmod>2025-01-15</lastmod>
   </url>
   <url>
-    <loc>https://rabinol.uz/about</loc>
+    <loc>https://rabinol.uz/#about</loc>
+    <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rabinol.uz/products</loc>
+    <loc>https://rabinol.uz/#products</loc>
+    <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/#contact</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p1_front.png</image:loc>
+      <image:title>RABINOL Motor Engine Oil 0W-20 High Performance 4L</image:title>
+      <image:caption>Rabinol OW-20 motor moyi Germaniyada ishlab chiqarilgan</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p2_front.png</image:loc>
+      <image:title>RABINOL Special Tec DX1 5W-30 Motor Oil SN</image:title>
+      <image:caption>Rabinol Special Tec DX1 5W-30 motor moyi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p3_front.png</image:loc>
+      <image:title>RABINOL Special Tec DX1 5W-30 Motor Oil</image:title>
+      <image:caption>Rabinol DX1 5W-30 yuqori sifatli motor moyi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/4</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p4_front.png</image:loc>
+      <image:title>RABINOL ATF DEXRON-VI Automatic Transmission Oil</image:title>
+      <image:caption>Rabinol ATF DEXRON-VI transmissiya moyi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/5</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p5_front.png</image:loc>
+      <image:title>RABINOL Gear Oil 75W-85 GL-5</image:title>
+      <image:caption>Rabinol Gear Oil 75W-85 transmissiya moyi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/6</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p6_front.png</image:loc>
+      <image:title>RABINOL Gear Oil 75W-90 GL-5</image:title>
+      <image:caption>Rabinol Gear Oil 75W-90 yuqori sifatli moy</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/7</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p7_front.png</image:loc>
+      <image:title>RABINOL Motor Engine Oil 10W-40</image:title>
+      <image:caption>Rabinol 10W-40 motor moyi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/8</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p8_front.png</image:loc>
+      <image:title>RABINOL DX1 Motor Engine Oil 10W-40</image:title>
+      <image:caption>Rabinol DX1 10W-40 sintetik motor moyi</image:caption>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://rabinol.uz/product/9</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://rabinol.uz/assets/p8_front.png</image:loc>
+      <image:title>RABINOL DX2 Motor Engine Oil 5W-40</image:title>
+      <image:caption>Rabinol DX2 5W-40 to'liq sintetik motor moyi</image:caption>
+    </image:image>
   </url>
 </urlset>

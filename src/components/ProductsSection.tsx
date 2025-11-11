@@ -320,10 +320,10 @@ const ProductsSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         <div ref={titleRef} className="text-center mb-12">
           <h2 className="text-5xl md:text-6xl font-bold mb-4 font-heading">
-            Premium <span className="gradient-text">Products</span>
+            RABINOL <span className="gradient-text">Motor Moylari</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Discover our professional-grade RABINOL motor oils and automotive fluids, engineered in Germany
+            Germaniyada ishlab chiqarilgan professional RABINOL oil va avtomobil moylari. Rabinol moylari - yuqori sifat va ishonchli xizmat kafolati.
           </p>
         </div>
 
