@@ -51,7 +51,7 @@ const ProductDetailDialog = ({
             src={images[current]}
             alt={`${product.title} ${current + 1}`}
             loading="lazy"
-            className="w-full h-full scale-125 object-cover"
+            className="w-full h-full object-cover"
           />
 
           {images.length > 1 && (
